@@ -5,6 +5,7 @@ module.exports = async function() {
     let fetchData = fetch("https://raw.githubusercontent.com/Sebola3461/osustream/main/updates.json")
     fetchData.then(res =>
         res.json()).then(d => {
+            d.toString()
             console.log(d)
             updateMeta = JSON.parse(d,"utf8");
             console.log(updateMeta)

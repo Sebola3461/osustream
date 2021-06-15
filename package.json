@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "test": "electron .",
-        "package": "electron-packager ./ osu!stream --platform=win32 --arch=x64"
+        "package": "electron-packager ./ osu!stream --platform=win32 --arch=x64",
+        "publish": "electron-forge publish"
     },
     "keywords": [
         "osu!",
@@ -14,14 +15,27 @@
     ],
     "author": "Sebola3461",
     "license": "ISC",
+    "config": {
+        "forge": {
+            "packagerConfig": {
+                "name": "@electron-forge/maker-wix",
+                "config": {
+                    "ui": {
+                        "chooseDirectory": true
+                    }
+                }
+            }
+        }
+    },
     "dependencies": {
         "axios": "^0.21.1",
         "electron": "^13.0.1",
-        "electron-simple-updater": "^2.0.10",
         "ini": "^2.0.0",
         "tmi.js": "^1.8.3"
     },
     "devDependencies": {
+        "electron-simple-updater": "^2.0.10",
+        "electron-builder": "^22.11.7",
         "electron-packager": "^15.2.0"
     }
 }

@@ -1,8 +1,7 @@
 {
-    "win32-x64-prod": {
+    "win32-x64": {
       "readme": "Eat bananas.",
-      "update": "https://github.com/megahertz/electron-simple-updater/releases/download/win32-x64-prod-v0.0.2",
-      "install": "https://github.com/megahertz/electron-simple-updater/releases/download/win32-x64-prod-v0.0.2/Simple.Updater.Example.Setup.0.0.2.exe",
+      "files": ["app.js", "./package.json"],
       "version": "1.0.3"
     }
 }

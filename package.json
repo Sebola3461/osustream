@@ -1,0 +1,27 @@
+{
+    "name": "osustream",
+    "version": "1.0.0",
+    "description": "h",
+    "main": "app.js",
+    "scripts": {
+        "test": "electron .",
+        "package": "electron-packager ./ osu!stream --platform=win32 --arch=x64"
+    },
+    "keywords": [
+        "osu!",
+        "pp",
+        "counter"
+    ],
+    "author": "Sebola3461",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "electron": "^13.0.1",
+        "electron-simple-updater": "^2.0.10",
+        "ini": "^2.0.0",
+        "tmi.js": "^1.8.3"
+    },
+    "devDependencies": {
+        "electron-packager": "^15.2.0"
+    }
+}

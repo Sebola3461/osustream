@@ -1,1 +1,1 @@
-# osustream
+# osu-stream

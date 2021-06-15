@@ -4,6 +4,7 @@ const { existsSync } = require('original-fs');
 const generate_default = require('./Configs/generate_default');
 const Configs = require('./Configs/index');
 const { updateUserData } = require('./Twitch');
+const updater = require("electron-simple-updater")
 let tray;
 let trayQuit;
 let mainWindow;
@@ -16,7 +17,7 @@ if (existsSync(`${process.env.APPDATA}/osustream/config.json`)) {
 }
 console.timeEnd("Config file check done in".yellow)
 
-//updater.init('https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json');
+updater.init('https://raw.githubusercontent.com/Sebola3461/osustream/main/updates.json');
 
 if (Configs.getConfigs().twitch.pendingAuthentication == true) {
     console.log("[App] Created login window.")

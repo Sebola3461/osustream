@@ -1,0 +1,23 @@
+{
+    "general": {
+        "tray": true
+    },
+    "strings": {
+        "np": "Now playing: {now_playing_artist} - {now_playing_title} [{now_playing_diff}] by {now_playing_mapper} | Download: {now_playing_url}",
+        "npInfo": "{now_playing_artist} - {now_playing_title} [{now_playing_diff}] by {now_playing_mapper} | BPM: {now_playing_bpm}, CS: {now_playing_cs}, AR: {now_playing_ar}, OD: {now_playing_od}, HP: {now_playing_hp} ({now_playing_sr}★ {now_playing_mods}) | 100%: {pp_100}pp ▶ 99%: {pp_99}pp ▶ 95%: {pp_95}pp",
+        "skiname": "Current skin: {skin_name}"
+    },
+    "bot": {
+        "disableCommands": "Enabled",
+        "chatErrorMessage": "Enabled",
+        "chatJoinConfirmation": "Enabled",
+        "cooldown": 0
+    },
+    "twitch": {
+        "pendingAuthentication": true,
+        "channel": "undefined", 
+        "id": "undefined",
+        "avatar": "undefined",
+        "token": "undefined"
+    }
+}

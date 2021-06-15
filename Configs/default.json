@@ -1,5 +1,6 @@
 {
     "general": {
+        "pendingUpdate": true,
         "tray": true
     },
     "strings": {

@@ -2,6 +2,6 @@
     "win32-x64": {
       "readme": "Eat bananas.",
       "files": ["app.js", "./package.json"],
-      "version": "1.0.3"
+      "version": "1.0.4"
     }
 }

@@ -10,6 +10,5 @@ module.exports = function(category, config, value) {
     configs.writeConfigs(current_configs)
     
     console.log(`[Edit Configs] Edited config ${config}`)
-    if (config != "cooldown") logger("Sucess", "Configuration updated!");
     return current_configs;
 }

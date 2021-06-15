@@ -20,5 +20,6 @@ module.exports = async function() {
             }
         }).catch(e => {
         console.log(e)
+        editConfigs("general", "pendingUpdate", true)
     })
 }   

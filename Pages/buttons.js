@@ -1,5 +1,6 @@
 const { changeConfig } = require("../Configs")
 const updateStream = require("../Twitch/Stream/updateStream")
+const logger = require("./logger")
 
 module.exports = function() {    
     document.querySelectorAll(".command-panel-switch").forEach(element => {
@@ -31,6 +32,7 @@ module.exports = function() {
     })
 
     document.getElementById("commands-pause-button").addEventListener("click", event => {
+        logger("Sucess", "Configuration updated!")
         if (event.target.getAttribute("value") == "Disabled") {
             changeConfig("bot", "disableCommands", "Disabled")
         }
@@ -41,6 +43,7 @@ module.exports = function() {
     })
 
     document.getElementById("disable-error-message-button").addEventListener("click", event => {
+        logger("Sucess", "Configuration updated!")
         if (event.target.getAttribute("value") == "Disabled") {
             changeConfig("bot", "chatErrorMessage", "Disabled")
         }
@@ -51,6 +54,7 @@ module.exports = function() {
     })
 
     document.getElementById("disable-login-confirmation-button").addEventListener("click", event => {
+        logger("Sucess", "Configuration updated!")
         if (event.target.getAttribute("value") == "Disabled") {
             changeConfig("bot", "chatJoinConfirmation", "Disabled")
         }

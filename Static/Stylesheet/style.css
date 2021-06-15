@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("./animations.css");
+
+* {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    cursor: default;
+    user-select: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+p.alpha {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    bottom: 2vh;
+    left: 10vw;
+}
+
+body {
+    background-color: #0e0e10;
+}
+
+div.layout-modal {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+div.left-sidebar {
+    width: 5vw;
+    height: 100vh;
+    background-color: #18181b;
+}
+
+div.layout-modal-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100vh;
+    color: #a970ff;
+}
+
+div.page-title-modal {
+    display: flex;
+    width: initial;
+    height: 30vh;
+    font-weight: 800;
+    font-size: 45px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 2.4rem;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+div.page-title-modal .page-title {
+    position: absolute;
+}
+
+div.panels-modal {
+    display: flex;
+    width: initial;
+    height: 85vh;
+    margin: 1rem 2.4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+div.dashboard-panel {
+    background-color: #1f1f21;
+    border-radius: .5em;
+    border: #303032 solid 1px;
+    box-shadow: 0px 5px 13px 3px rgb(0 0 0 / 91%);
+}
+
+div.command-log-panel {
+    width: 45%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+div.command-log-panel .title {
+    margin-right: 67%;
+    position: relative;
+    bottom: 6vh;
+    font-weight: 600;
+    font-size: 26px;
+    color: #dbeff1;
+}
+
+div.command-manager-panel {
+    width: 35%;
+    height:30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+div.command-manager-panel .title {
+    position: relative;
+    bottom: 6vh;
+    right: 40%;
+    font-weight: 600;
+    font-size: 26px;
+    color: #dbeff1;
+}
+
+div.command-manager-panel .panel-label {
+    align-self: flex-start;
+}
+
+div.command-manager-panel .content-modal {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+input.panel-input {
+    width: 70%;
+    height: 15%;
+    background: #18181b;
+    border: none;
+    border-radius: 0.2rem;
+    color: white;
+    cursor: pointer;
+    font-size: 100%;
+    transition: linear 50ms;
+}
+
+input.panel-input:hover {
+    background: #0f0f11;
+}
+
+div.nonflex {
+    display: block;
+}
+
+button#commands-help {
+    width: 3vw;
+    margin: 0.2rem;
+    height: 3vh;
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+button#commands-save {
+    width: 8vw;
+    margin: 0.2rem;
+    height: 4vh;
+    background-color: #a970ff;
+    border: none;
+    color: white;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+button#commands-save:hover {
+    background-color: #724bac;
+}
+
+button#commands-save:active {
+    background-color: #9060d8;
+}
+
+div.sidebar-pfp-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-self: flex-end;
+    align-items: center;
+}
+
+img.profile-pfp {
+    width: 10%;
+    height: auto;
+    margin-right: 0.4rem;
+    border-radius: 100%;
+}
+
+span#sidebar-channel-name {
+    font-size: 18px;
+    margin-right: 2.4rem;
+    color: #ecfdff;
+    transition: linear 50ms;
+    cursor: pointer;
+}
+
+span#sidebar-channel-name:hover {
+    color: #a970ff;
+}
+
+div.option-container {
+    display: flex;
+    width: 92%;
+    height: 20%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #303032;
+    align-content: center;
+}
+
+label.option-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #dadada;
+}
+
+input[type="button"] {
+    transition: linear 100ms;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    border: none;
+    background-color: #303032;
+    padding: 0.2rem;
+    width: 11.5%;
+    border-radius: .2rem;
+    color: rgb(226, 226, 226);
+    cursor: text;
+}
+
+input[type="number"]:focus {
+    border: none;
+    background-color: #0f0f11;
+    border: #9060d8 solid 1px;
+    padding: 0.2rem;
+    width: 11.5%;
+    border-radius: .2rem;
+    color: white;
+    cursor: text;
+}
+
+input[type="button"][value="Enabled"], input[type="button"][value="Enable"] {
+    border: none;
+    padding: .4rem;
+    border-radius: .2rem;
+    color: #0e0e10;
+    font-weight: 600;
+    background-color: #00f593;
+}
+
+input[type="button"][value="Enabled"]:hover, input[type="button"][value="Enable"]:hover {
+    color: #0e0e10;
+    background-color: #00f593;
+}
+
+input[type="button"][value="Disabled"], input[type="button"][value="Disable"] {
+    border: none;
+    padding: .4rem;
+    border-radius: .2rem;
+    color: #fff;
+    font-weight: 600;
+    background-color: #bb1411;
+}
+
+input[type="button"][value="Disabled"]:hover, input[type="button"][value="Disable"]:hover {
+    color: #fff;
+    background-color: #bb1411;
+}
+
+input[type="text"] {
+    border: none;
+    background-color: #303032;
+    padding: 0.4rem;
+    width: 60%;
+    border-radius: .2rem;
+    color: rgb(226, 226, 226);
+    cursor: text;
+}
+
+input[type="text"]:focus {
+    border: none;
+    background-color: #0f0f11;
+    border: #9060d8 solid 1px;
+    border-radius: .2rem;
+    color: white;
+}
+
+label.status-label {
+    font-weight: 600;
+    font-size: 120%;
+    color: #dbeff1;
+}
+
+div.option-container.status-box {
+    height: 35%;
+}
+
+div.connection-status-displayer[status="0"] {
+    color: #fff;
+    background-color: #bb1411;
+    border-radius: .2rem;
+    padding: .2rem;
+}
+
+div.connection-status-displayer[status="1"] {
+    color: #000;
+    background-color: #00f593;
+    border-radius: .2rem;
+    padding: .2rem;
+}
+
+div.stream-update-panel {
+    width: 45%;
+    height: 38%;
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+div.stream-update-panel .title {
+    position: relative;
+    bottom: 6vh;
+    right: 32%;
+    font-weight: 600;
+    font-size: 26px;
+    color: #dbeff1;
+}
+
+button.save-button {
+    position: relative;
+    bottom: 3%;
+    left: 42%;
+    padding: .3rem;
+    border-radius: .2rem;
+    border: none;
+    color: #fff;
+    background-color: #9060d8;
+    cursor: pointer;
+}
+
+button.save-button:hover {
+    background-color: #724bac;
+}
+
+button.save-button:active {
+    background-color: #9060d8;
+}
+
+
+div.command-logger-panel {
+    width: 35%;
+    height: 42vh;
+    display: flex;
+    margin-top: -4.5%;
+    margin-left: 3%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+
+}
+
+div.command-logger-panel .title {
+    position: relative;
+    bottom: 6vh;
+    right: 28%;
+    font-weight: 600;
+    font-size: 26px;
+    color: #dbeff1;
+}
+
+div.command-logs-wrapper {
+    width: 90%;
+    height: max-content;
+    overflow-x: clip;
+    overflow-y: scroll;
+    line-break: anywhere;
+}
+
+div.command-logs-wrapper::-webkit-scrollbar { 
+    position: absolute;
+}
+
+div.command-log {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    background-color: #18181b;
+    padding: 2%;
+    border-radius: .4rem;
+    margin-top: 2%;
+}
+
+div.command-log .time {
+    color: #c7c7c7;
+    padding-right: 3%;
+}
+
+div.command-log .name { 
+    color: white;
+    font-weight: 600;
+}
+
+div.command-log .command { 
+    color: #9060d8;
+    padding-left: 6%;
+}
+
+div#notifications-container {
+    position: absolute;
+    right: 0;
+    bottom: 5vh;
+    width: 20vw;
+    height: 80%;
+    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+div#notifications-container .notification {
+    z-index: 9999;
+    position: relative;
+    width: 98%;
+    height: fit-content;
+    margin: .2rem;
+    background: #1f1f21;
+    border-radius: .2rem;
+    animation-name: showNotification;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+}
+
+div#notifications-container .notification[type="error"] { 
+    border: #bb1411 solid 1px;
+}
+
+div#notifications-container .notification[type="Sucess"] { 
+    border: #00f593 solid 1px;
+}
+
+div#notifications-container .notification[type="App"] { 
+    border: #0072f5 solid 1px;
+}
+
+div#notifications-container .notification[type="Warning"] { 
+    border: #f5e500 solid 1px;
+}
+
+div#notifications-container .notification .title {
+    color: white;
+    font-weight: 600;
+    margin: 3%;
+}
+
+div#notifications-container .notification .content {
+    margin: 3%;
+    color: #b1b1b1;
+}

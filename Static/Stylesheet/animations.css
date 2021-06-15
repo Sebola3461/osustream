@@ -1,0 +1,17 @@
+@keyframes showNotification {
+    0% {
+        left: 200%;
+    }
+    100% {
+        left: 2%;
+    }
+}
+
+@keyframes hideNotification {
+    0% {
+        left: 2%;
+    }
+    100% {
+        left: 200%;
+    }
+}

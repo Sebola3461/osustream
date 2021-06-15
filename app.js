@@ -10,8 +10,6 @@ let tray;
 let trayQuit;
 let mainWindow;
 
-checkUpdates()
-
 console.time("Config file check done in".yellow)
 if (existsSync(`${process.env.APPDATA}/osustream/config.json`)) {
     void {};
@@ -19,6 +17,8 @@ if (existsSync(`${process.env.APPDATA}/osustream/config.json`)) {
     generate_default()
 }
 console.timeEnd("Config file check done in".yellow)
+
+checkUpdates()
 
 if (Configs.getConfigs().twitch.pendingAuthentication == true) {
     console.log("[App] Created login window.")

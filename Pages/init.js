@@ -11,6 +11,6 @@ const checkForUpdates  = require("../Updater/init");
 
 updateUserInfo()
 bot()
-//start()
+start()
 sync()
 buttons()

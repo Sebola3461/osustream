@@ -1,6 +1,6 @@
 const { default: axios } = require("axios")
 const { readFileSync } = require("original-fs")
-const { getConfigs } = require("../Configs")
+const { getConfigs, editConfigs } = require("../Configs")
 const init = require("./init");
 const updateConfigFile = require("./updateConfigFile");
 const configs = getConfigs();
@@ -10,6 +10,7 @@ module.exports = function() {
     let currentPackage = JSON.parse(readFileSync(__dirname+"/../package.json", "utf8"))
     axios.get("https://raw.githubusercontent.com/Sebola3461/osustream/main/updates.json").then((d) => {
         if (currentPackage.version != d.data.version ) {
+            editConfigs("general", "pendingUpdate", true)
             return init();
         }
         console.log("Everything is up to date")

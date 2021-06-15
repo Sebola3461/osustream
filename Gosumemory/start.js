@@ -5,7 +5,7 @@ const setStatus = require('../Pages/setStatus');
 module.exports = function() {
     logger("App", "Waiting for start the game integration")
     const { exec } = require('child_process');
-    let memory = exec(`${__dirname + "\\"}memory.exe`)
+    let memory = exec(`${__dirname + "\\"}9dh9ewhf9fhda98dhf-gosumemory.exe`)
     setStatus("osu-connection-diplayer", "1", "Connected")
     logger("Sucess", "Initialized the game integration")
     

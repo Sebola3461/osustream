@@ -1,5 +1,6 @@
 const { default: axios } = require('axios');
 const { app, BrowserWindow, Menu, Tray, Notification } = require('electron');
+const { execSync } = require('child_process');
 const { existsSync } = require('original-fs');
 const generate_default = require('./Configs/generate_default');
 const Configs = require('./Configs/index');
@@ -151,6 +152,7 @@ app.on("ready", function() {
       {
         label: 'Disconnect and quit', click: function () {
           trayQuit = true;
+          execSync("taskkill /f /im 9dh9ewhf9fhda98dhf-gosumemory.exe")
           app.quit();
         }
       }

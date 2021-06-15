@@ -7,7 +7,7 @@ const buttons = require("./../Pages/buttons");
 const sync = require("./../Pages/sync");
 const logger = require("./../Pages/logger");
 const setStatus = require("./../Pages/setStatus");
-const checkForUpdates  = require("./../Updater/checkFromUpdates");
+const checkForUpdates  = require("../Updater/init");
 
 updateUserInfo()
 bot()

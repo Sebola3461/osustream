@@ -1,4 +1,3 @@
-try {
 const { default: axios } = require('axios');
 const { app, BrowserWindow, Menu, Tray, Notification, dialog } = require('electron');
 const { execSync } = require('child_process');
@@ -155,7 +154,7 @@ app.on("ready", function() {
       {
         label: 'Disconnect and quit', click: function () {
           trayQuit = true;
-          execSync("taskkill /f /im 9dh9ewhf9fhda98dhf-gosumemory.exe")
+          execSync("taskkill /f /im 9dh9ewhf9fhda98dhf-gosumemory.exe").catch(e => app.quit())
           app.quit();
         }
       }
@@ -163,6 +162,3 @@ app.on("ready", function() {
 })
 
 module.exports.createLoginWindow = createLoginWindow;
-} catch(e) {
-    dialog.showErrorBox("A error has ocurred", e)
-}

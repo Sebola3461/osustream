@@ -64,6 +64,7 @@ function createWindow() {
     // and load the index.html of the app.
     console.time("Window load done in")
     const checkUpdates = require('./Updater/checkUpdates');
+   
     checkUpdates()
     mainWindow.loadFile(__dirname + '/Static/index.html').then(console.timeEnd("Window load done in".yellow))
     console.log("[App] Created main window.")

@@ -1,7 +1,7 @@
 {
     "win32-x64": {
       "readme": "Eat bananas.",
-      "files": ["./static/index.html"],
+      "files": ["./Static/index.html"],
       "version": "1.0.5"
     }
 }

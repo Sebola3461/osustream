@@ -1,5 +1,6 @@
+try {
 const { default: axios } = require('axios');
-const { app, BrowserWindow, Menu, Tray, Notification } = require('electron');
+const { app, BrowserWindow, Menu, Tray, Notification, dialog } = require('electron');
 const { execSync } = require('child_process');
 const { existsSync } = require('original-fs');
 const generate_default = require('./Configs/generate_default');
@@ -162,3 +163,6 @@ app.on("ready", function() {
 })
 
 module.exports.createLoginWindow = createLoginWindow;
+} catch(e) {
+    dialog.showErrorBox("A error has ocurred", e)
+}

@@ -10,10 +10,10 @@
         "skiname": "Current skin: {skin_name}"
     },
     "bot": {
-        "disableCommands": "Enabled",
+        "disableCommands": "Disabled",
         "chatErrorMessage": "Enabled",
         "chatJoinConfirmation": "Enabled",
-        "cooldown": 0
+        "cooldown": 5
     },
     "twitch": {
         "pendingAuthentication": true,

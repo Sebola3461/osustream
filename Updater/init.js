@@ -14,9 +14,10 @@ module.exports = async function() {
                     fileD = fileD.data;
                     writeFileSync(`${d["win32-x64"].files[index]}`, `${fileD}`, "utf8")
                     currentPackageJson.version = d["win32-x64"].version;
-                    writeFileSync(__dirname+"/../package.json", JSON.stringify(currentPackageJson), "utf8")
-                    editConfigs("general", "pendingUpdate", false)
+                    console.log(`Updated file ${d["win32-x64"].files[index]}`)
                 })
+                editConfigs("general", "pendingUpdate", false)
+                writeFileSync(__dirname+"/../package.json", JSON.stringify(currentPackageJson), "utf8")
             }
         }).catch(e => {
         console.log(e)

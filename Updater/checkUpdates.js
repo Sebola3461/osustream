@@ -3,6 +3,7 @@ const { readFileSync } = require("original-fs")
 const { getConfigs, editConfigs } = require("../Configs")
 const init = require("./init");
 const updateConfigFile = require("./updateConfigFile");
+const colors = require("colors")
 const configs = getConfigs();
 
 module.exports = function() {
@@ -11,6 +12,7 @@ module.exports = function() {
     axios.get("https://raw.githubusercontent.com/Sebola3461/osustream/main/updates.json").then((d) => {
         if (currentPackage.version != d.data.version ) {
             editConfigs("general", "pendingUpdate", true)
+            console.log("Pending update detected, Updating".yellow)
             return init();
         }
         console.log("Everything is up to date")

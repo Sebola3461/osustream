@@ -5,7 +5,6 @@ const { existsSync } = require('original-fs');
 const generate_default = require('./Configs/generate_default');
 const Configs = require('./Configs/index');
 const { updateUserData } = require('./Twitch');
-const checkUpdates = require('./Updater/checkUpdates');
 let tray;
 let trayQuit;
 let mainWindow;
@@ -17,8 +16,6 @@ if (existsSync(`${process.env.APPDATA}/osustream/config.json`)) {
     generate_default()
 }
 console.timeEnd("Config file check done in".yellow)
-
-checkUpdates()
 
 if (Configs.getConfigs().twitch.pendingAuthentication == true) {
     console.log("[App] Created login window.")
@@ -63,6 +60,8 @@ function createWindow() {
 
     // and load the index.html of the app.
     console.time("Window load done in")
+    const checkUpdates = require('./Updater/checkUpdates');
+    checkUpdates()
     mainWindow.loadFile(__dirname + '/Static/index.html').then(console.timeEnd("Window load done in".yellow))
     console.log("[App] Created main window.")
         // mainWindow.webContents.openDevTools()

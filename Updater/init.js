@@ -13,10 +13,10 @@ module.exports = async function() {
                 axios.get(`https://raw.githubusercontent.com/Sebola3461/osustream/main/${d["win32-x64"].github_raw[index]}`).then((fileD) => {
                     fileD = fileD.data;
                     writeFileSync(`${d["win32-x64"].files[index]}`, `${fileD}`, "utf8")
-                    currentPackageJson.version = d["win32-x64"].version;
                     console.log(`Updated file ${d["win32-x64"].files[index]}`)
                 })
                 editConfigs("general", "pendingUpdate", false)
+                currentPackageJson.version = d["win32-x64"].version;
                 writeFileSync(__dirname+"/../package.json", JSON.stringify(currentPackageJson), "utf8")
             }
         }).catch(e => {

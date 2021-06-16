@@ -1,8 +1,8 @@
 {
     "win32-x64": {
       "readme": "Eat bananas.",
-      "github_raw":["/Static/index.html"],
-      "files": ["./Static/index.html"],
-      "version": "1.0.05"
+      "github_raw":["/app.js"],
+      "files": ["./app.js"],
+      "version": "1.0.5"
     }
 }

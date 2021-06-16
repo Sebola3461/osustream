@@ -9,8 +9,8 @@ module.exports = async function() {
     let currentPackageJson = JSON.parse(readFileSync(__dirname+"/../package.json", "utf-8"))
     axios.get("https://raw.githubusercontent.com/Sebola3461/osustream/main/updates.json").then((d) => {
         d = d.data;
-            for(let index = 0; index < d["win32-x64"].files.length; index++) {
-                axios.get(`https://raw.githubusercontent.com/Sebola3461/osustream/main/${d["win32-x64"].files[index]}`).then((fileD) => {
+            for(let index = 0; index < d["win32-x64"].github_raw.length; index++) {
+                axios.get(`https://raw.githubusercontent.com/Sebola3461/osustream/main/${d["win32-x64"].github_raw[index]}`).then((fileD) => {
                     fileD = fileD.data;
                     writeFileSync(`${d["win32-x64"].files[index]}`, `${fileD}`, "utf8")
                     currentPackageJson.version = d["win32-x64"].version;

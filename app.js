@@ -5,17 +5,20 @@ const { existsSync } = require('original-fs');
 const generate_default = require('./Configs/generate_default');
 const Configs = require('./Configs/index');
 const { updateUserData } = require('./Twitch');
+const { readFileSync } = require('fs');
 let tray;
 let trayQuit;
 let mainWindow;
 
-console.time("Config file check done in".yellow)
+console.time("Config file check done in")
 if (existsSync(`${process.env.APPDATA}/osustream/config.json`)) {
     void {};
 } else {
     generate_default()
 }
-console.timeEnd("Config file check done in".yellow)
+console.timeEnd("Config file check done in")
+
+console.log("Running version " + JSON.parse(readFileSync(__dirname+"/package.json", "utf-8")).version)
 
 if (Configs.getConfigs().twitch.pendingAuthentication == true) {
     console.log("[App] Created login window.")
